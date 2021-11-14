@@ -1,10 +1,12 @@
-import './App.css';
+import React from 'react'
+
+import Signup from './components/signup/Signup';
 
 function App() {
   return (
-    <>
-    <h1>VIRTUAL MALL</h1>
-    </>
+    <div>
+    <Signup/>
+    </div>
   );
 }
 

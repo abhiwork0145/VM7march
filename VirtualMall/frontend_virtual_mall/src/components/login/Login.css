@@ -1,0 +1,20 @@
+.Google{
+    width: 310px;
+    height: 35px;
+    background-image: url("g1.jpg");
+    background-repeat: no-repeat;
+    background-size: 30px;
+    
+
+}
+.Facebook{
+    width: 310px;
+    height: 35px;
+    background-image: url("f2.jpg");
+    background-repeat: no-repeat;
+    background-size: 30px;
+
+}
+.lo{
+    margin-left: 30px; 
+}
