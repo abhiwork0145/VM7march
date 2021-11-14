@@ -22,14 +22,12 @@ class UserRegistration(APIView):
         if userserializer.is_valid():
             userserializer.save()
             return Response({"success": "Signed in succesfully"})
-        return Response({"error":str(userserializer.errors)})
+        return Response({"error":userserializer.errors})
 
     def get(self,request, id=None):
         data = UserTable.objects.all()
         userserializer = UserSerializer(data, many = True)
         return Response({"data":userserializer.data})
-
-
 
 class UserLogin(APIView):
     authentication_classes = [JWTAuthentication]
@@ -46,3 +44,7 @@ class UserLogin(APIView):
             return Response({"error":"Wrong email or password"})
         except:
             return Response({"error":"Wrong email or password"})
+
+    def delete(self, request, id=None):
+        UserTable.objects.all().delete()
+        return Response({"data":"data deleted"})
