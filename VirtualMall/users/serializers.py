@@ -3,23 +3,24 @@ from .models import UserTable
 from rest_framework.validators import UniqueTogetherValidator
 import re
 from django.contrib.auth.hashers import make_password
+from passlib.hash import pbkdf2_sha256
 
 class UserSerializer(serializers.ModelSerializer):
 
-    # def validate_password(self, value):
-    #     if len(value) < 7:
-    #         raise serializers.ValidationError("Ensure this field has minimum 8 characters")
-    #     return value
+    def validate_password(self, value):
+        if len(value) < 8:
+            raise serializers.ValidationError("Ensure this field has minimum 8 characters")
+        return value
 
-    # def validate_email(self, value):
-    #     if value and UserTable.objects.filter(email__exact=value).exists():
-    #         raise serializers.ValidationError("This field must be unique.")
-    #     regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
-    #     if(re.match(regex, value)):
-    #         raise serializers.ValidationError("Enter a valid email address.")
-    #     if len(value)==0:
-    #         raise serializers.ValidationError("This field must not be blank.")
-    #     return value
+    def validate_email(self, value):
+        if value and UserTable.objects.filter(email__exact=value).exists():
+            raise serializers.ValidationError("This field must be unique.")
+        regex = r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+        if(re.match(regex, value)==False):
+            raise serializers.ValidationError("Enter a valid email address.")
+        if len(value)==0:
+            raise serializers.ValidationError("This field must not be blank.")
+        return value
 
 
     def validate_username(self,value):
@@ -31,22 +32,20 @@ class UserSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("This field must be unique.")
         return value
 
-    # def create(self, validated_data):
-    #     user = UserTable(
-    #         email=validated_data['email'],
-    #         username=validated_data['username'],
-    #         password = make_password(validated_data['password'])
-    #     )
-    #     user.save()
-    #     return user
+    def create(self, validated_data):
+        enc_string = pbkdf2_sha256.hash(validated_data['password'], rounds=12000, salt_size=32)
+        user = UserTable(
+            email=validated_data['email'],
+            username=validated_data['username'],
+            password = enc_string
+        )
+        user.save()
+        return user
 
     class Meta:
         model = UserTable
         fields = ('email', 'username', 'password')
-        # extra_kwargs = {'password': {'write_only': True}}
-
-        
-
+        extra_kwargs = {'password': {'write_only': True}}
 
         validators = [
             UniqueTogetherValidator(
