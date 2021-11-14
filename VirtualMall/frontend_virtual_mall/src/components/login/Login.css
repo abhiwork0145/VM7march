@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Google{
     width: 310px;
     height: 35px;
@@ -17,4 +18,97 @@
 }
 .lo{
     margin-left: 30px; 
+=======
+body {
+    background-color: #1A2638;
+}
+
+#v-mall-heading{
+    font-size: 5vh;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.login-container {
+    margin: 0 auto;
+    width: 55%;
+    height: 82vh;
+    background-color: white;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mall-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin: 4px;
+}
+
+.login-content {
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2.5px solid black;
+    padding: 3%;
+}
+
+.login-input{
+    width: 80%;
+    background-color: #EAECEF;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    height: 5vh;
+    margin-top: 3%;
+}
+
+.login-input::placeholder {
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.login-buttons{
+    width: 82%;
+    margin-bottom:8px;
+    height: 6vh;
+    font-weight: 700;
+    font-family: sans-serif;
+    border-radius: 5px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#normal-login-button {
+    background-color: #0857D8;
+    color: white;
+}
+
+.buttons-logo{
+    height: 80%;
+    width: 10%;
+    border-radius: 10px;
+    margin-right: -24%;
+}
+
+.more-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.more-container > a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 2%;
+>>>>>>> e02ed061f3f92e79cd8bd5bb442c3e6712c4ea8b
 }
