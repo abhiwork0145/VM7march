@@ -11,7 +11,6 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 class UserRegistration(APIView):
-
     def post(self,request, id=None):
         data = JSONParser().parse(request)
         userserializer = UserSerializer(data=data)
@@ -28,6 +27,10 @@ class UserRegistration(APIView):
         data = UserTable.objects.all()
         userserializer = UserSerializer(data, many = True)
         return Response({"data":userserializer.data})
+
+    def delete(self, request, id=None):
+        UserTable.objects.all().delete()
+        return Response({"data":"data deleted"})
 
 class UserLogin(APIView):
     authentication_classes = [JWTAuthentication]
