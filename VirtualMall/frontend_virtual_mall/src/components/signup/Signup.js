@@ -1,6 +1,7 @@
 import React from 'react'
 import './Signup.css'
-import Login from '../login/Login'
+import Google from './images/google.jpeg';
+import Facebook from './images/facebook.png';
 
 function Signup() {
     return (
@@ -13,8 +14,9 @@ function Signup() {
               <input type = "text"  class="Number" id = "Mobile number" placeholder=  "Phone Number" /><br/><br/>
                <input type = "password" class="Password" placeholder="Password"/><br/><br/>
               <button type="Button" class = "next">Next</button><br/><br/>
+              <button className="login-buttons"><img src={Google} alt="" className="buttons-logo"/>Google Sign-In</button>
+              <button className="login-buttons"><img src={Facebook} alt="" className="buttons-logo"/>FaceBook Sign-In</button>
               </div>
-              <Login/>
           </div>
           
     

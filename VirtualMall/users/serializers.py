@@ -2,7 +2,6 @@ from rest_framework import serializers
 from .models import UserTable
 from rest_framework.validators import UniqueTogetherValidator
 import re
-from django.contrib.auth.hashers import make_password
 from passlib.hash import pbkdf2_sha256
 
 class UserSerializer(serializers.ModelSerializer):
