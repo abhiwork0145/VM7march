@@ -40,7 +40,7 @@ class UserLogin(APIView):
         data = JSONParser().parse(request)
         try: 
             user = UserTable.objects.get(email = data["email"])
-            if user.password == (data["password"]):
+            if user.verify_password(user.password):
                 refresh = RefreshToken.for_user(user)
                 return Response({"success":True , "email":data["email"], "id":user.pk, "password":user.password,
                                 'refresh': str(refresh),'access': str(refresh.access_token)})
