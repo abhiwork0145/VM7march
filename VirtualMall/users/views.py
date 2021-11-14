@@ -33,8 +33,6 @@ class UserRegistration(APIView):
         return Response({"data":"data deleted"})
 
 class UserLogin(APIView):
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
     
     def post(self,request):
         data = JSONParser().parse(request)
@@ -42,11 +40,11 @@ class UserLogin(APIView):
             user = UserTable.objects.get(email = data["email"])
             if user.verify_password(data["password"]):
                 refresh = RefreshToken.for_user(user)
-                return Response({"success":True , "email":data["email"], "id":user.pk, "password":user.password,
+                return Response({"success":True , "email":data["email"], "id":user.id, "password":user.password,
                                 'refresh': str(refresh),'access': str(refresh.access_token)})
             return Response({"error":"Wrong email or password"})
-        except:
-            return Response({"error":"Wrong email or password"})
+        except Exception as e:
+            return Response({"error":str(e)})
 
     def delete(self, request, id=None):
         UserTable.objects.all().delete()

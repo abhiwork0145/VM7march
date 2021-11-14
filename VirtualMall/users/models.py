@@ -4,7 +4,7 @@ from passlib.hash import pbkdf2_sha256
 # Create your models here.
 
 class UserTable(models.Model):
-    userid = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=30, null=True, blank=True)
     email = models.EmailField(max_length=50, null=True, blank=True)
     password = models.TextField(null=True, blank=True)
