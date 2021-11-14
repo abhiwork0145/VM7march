@@ -3,8 +3,11 @@ from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from users.models import UserTable
 from .serializers import UserSerializer
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from rest_auth.registration.views import SocialLoginView
 
-# Create your views here.
+
 
 class UserRegistration(APIView):
 
@@ -24,3 +27,9 @@ class UserRegistration(APIView):
         data = UserTable.objects.all()
         userserializer = UserSerializer(data, many = True)
         return Response({"data":userserializer.data})
+
+class FacebookLogin(SocialLoginView):
+    adapter_class = FacebookOAuth2Adapter
+
+class GoogleLogin(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter
