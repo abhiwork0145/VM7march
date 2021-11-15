@@ -1,0 +1,35 @@
+.container{
+    margin-left: 350px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    background-color: rgb(204, 228, 238);
+    padding: 25px 30px;
+    border-radius: 9px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(8, 8, 8);   
+}
+
+.next{
+    width: 310px;
+    height: 35px;
+    background-color: blue;
+}
+.Name{
+    width: 300px;
+    height: 30px;
+
+}
+.Number{
+    width: 300px;
+    height: 30px;
+
+}
+.Password{
+    width: 300px;
+    height: 30px;
+
+}
