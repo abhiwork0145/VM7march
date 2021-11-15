@@ -3,6 +3,7 @@ import './Login.css';
 import { useState } from "react";
 import Google from './images/google.jpeg';
 import Facebook from './images/facebook.png';
+import {Link} from 'react-router-dom'
 
 const Login = (props) =>{
   const [email, setEmail] = useState("")
@@ -44,8 +45,8 @@ const Login = (props) =>{
                 </div> 
               </form>  
               <div className="more-container">
-                  <a href="#">Don't Have An Account? Register Here</a>
-                  <a href="#">Forgot Password? Reset Now</a>
+                  <Link to= "/signup">Don't Have An Account? Register Here</Link>
+                  {/* <a href="#">Forgot Password? Reset Now</a> */}
               </div>
           </div>     
         </>

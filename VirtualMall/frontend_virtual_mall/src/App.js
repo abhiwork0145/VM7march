@@ -9,7 +9,6 @@ import {
   Link
 } 
 from 'react-router-dom';
-import axios from "axios";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -65,21 +64,21 @@ function App() {
         }          
     }); 
   }
-
   return (
     <div>
       <BrowserRouter>
-        
-        <Routes>
-          {/* {!isLoggedIn && <Route exact path="/">
+        { !isLoggedIn &&
+          <div>
             <Link to="/login">Login </Link>
             <Link to="/signup">Signup </Link>
-          </Route> }
-          {isLoggedIn && <Route exact path="/">
-            <button onClick="logoutHandler"></button>
-          </Route>} */}
-          
-          <Route path="/login" element={<Login />}></Route>
+          </div>
+        }
+        
+        { isLoggedIn &&
+          <button onClick={logoutHandler}>Logout</button>
+        }
+        <Routes>          
+          <Route path="/login" element={<Login onLogin={loginHandler} />}></Route>
           <Route path="/signup" element={<Signup onSignup={signupHandler} />}></Route>
         </Routes>
       </BrowserRouter>   
