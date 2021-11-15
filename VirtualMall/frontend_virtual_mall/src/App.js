@@ -78,8 +78,7 @@ function App() {
           {isLoggedIn && <Route exact path="/">
             <button onClick="logoutHandler"></button>
           </Route>} */}
-          
-          <Route path="/login" element={<Login />}></Route>
+          <Route path="/login"  element={<Login onLogin={loginHandler} />}></Route>
           <Route path="/signup" element={<Signup onSignup={signupHandler} />}></Route>
         </Routes>
       </BrowserRouter>   
