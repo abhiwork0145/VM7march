@@ -37,22 +37,39 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'users',
+
+    #django rest framework
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+
+    #for social login
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
     'rest_framework_simplejwt',
     'users',
     'corsheaders'
 ]
 
+SITE_ID = 1
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
+
 ]
 
 REST_FRAMEWORK = {
@@ -62,6 +79,7 @@ REST_FRAMEWORK = {
 }
 
 ROOT_URLCONF = 'VirtualMall.urls'
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {

@@ -3,12 +3,13 @@ from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from users.models import UserTable
 from .serializers import UserSerializer
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from rest_auth.registration.views import SocialLoginView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-
-# Create your views here.
 
 class UserRegistration(APIView):
     def post(self,request, id=None):
@@ -51,3 +52,10 @@ class UserLogin(APIView):
     def delete(self, request, id=None):
         UserTable.objects.all().delete()
         return Response({"data":"data deleted"})
+
+
+class GoogleLogin(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter
+
+class FacebookLogin(SocialLoginView):
+    adapter_class = FacebookOAuth2Adapter
