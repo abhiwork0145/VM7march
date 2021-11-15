@@ -7,8 +7,6 @@ from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView
 
-
-
 class UserRegistration(APIView):
 
     def post(self,request, id=None):
@@ -28,8 +26,11 @@ class UserRegistration(APIView):
         userserializer = UserSerializer(data, many = True)
         return Response({"data":userserializer.data})
 
-class FacebookLogin(SocialLoginView):
-    adapter_class = FacebookOAuth2Adapter
 
 class GoogleLogin(SocialLoginView):
     adapter_class = GoogleOAuth2Adapter
+
+
+class FacebookLogin(SocialLoginView):
+    adapter_class = FacebookOAuth2Adapter
+
