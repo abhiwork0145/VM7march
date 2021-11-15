@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Signup from './components/signup/Signup';
 import Login from './components/login/Login';
+import axios from 'axios';
 import {
   BrowserRouter,
   Routes,
@@ -49,6 +50,22 @@ function App() {
     window.location.href="/";
   };
 
+  const signupHandler = (user, email, password) =>{
+    axios
+      .post("http://localhost:8000/users/registration/", { "username" : user, "email": email, "password" : password})
+      .then((response) => {
+        console.log(response);
+        console.log(response.data);
+        if (response.data.success){
+          alert(response.data.success)
+          window.location.href = "/login"
+        }
+        else{
+          alert(response.data.error)
+        }          
+    }); 
+  }
+
   return (
     <div>
       <BrowserRouter>
@@ -61,8 +78,9 @@ function App() {
           {isLoggedIn && <Route exact path="/">
             <button onClick="logoutHandler"></button>
           </Route>} */}
-          <Route path="/login"  element={<Login onLogin={loginHandler} />}></Route>
-          <Route path="/signup" element={<Signup />}></Route>
+          
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/signup" element={<Signup onSignup={signupHandler} />}></Route>
         </Routes>
       </BrowserRouter>   
     </div>
