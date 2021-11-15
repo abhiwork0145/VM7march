@@ -36,8 +36,10 @@ class UserLogin(APIView):
     
     def post(self,request):
         data = JSONParser().parse(request)
+        print(data)
         try: 
             user = UserTable.objects.get(email = data["email"])
+            print("askdh")
             if user.verify_password(data["password"]):
                 refresh = RefreshToken.for_user(user)
                 return Response({"success":True , "email":data["email"], "id":user.id, "password":user.password,
