@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+
+.logintag {
+  font-size: 20px;
+  margin-left: 100px;
+  margin-right: 20px;
+  margin-top: 40px;
+  color: white;
+}
+
+.logo {
+  font-size: 20px;
+  color: white;
+}
+
+span {
+  color: red;
+
+}
+
+.First_Letter {
+  font-size: 40px;
+  background: -webkit-linear-gradient(#eee, rgb(179, 8, 122));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+}
+
+.Nav_login {
+  color: white;
+  text-decoration: none;
+  margin-left: 1100px;
+  margin-right: 20px;
+
+}
+
+.Nav_logout{
+  color: white;
+  text-decoration: none;
+}
