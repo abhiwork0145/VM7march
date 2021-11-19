@@ -1,8 +1,17 @@
 h1 {
     color: black;
     align-items: center;
+    color: c;
 }
 
-body {
-    background-color: steelblue;
+.home_page {
+    margin: 0;
+    padding: 0;
+    font-family: montsettat;
+    background: linear-gradient(120deg, #247392, #af34af);
+    height: 89vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

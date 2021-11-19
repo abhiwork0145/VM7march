@@ -5,8 +5,10 @@ import './Home.css';
 const Home = (props) => {
     return (
         <>
-          <h1>Welcome To Virtual Mall</h1>
- 
+            <div className="home_page">
+                <h1>Welcome To Virtual Mall</h1>
+            </div>
+
         </>
     )
 }
