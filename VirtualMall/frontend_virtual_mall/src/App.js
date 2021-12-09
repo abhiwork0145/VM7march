@@ -45,6 +45,7 @@ function App() {
 
       });
   };
+  
   const logoutHandler = () => {
     localStorage.clear();
     setIsLoggedIn(false);
