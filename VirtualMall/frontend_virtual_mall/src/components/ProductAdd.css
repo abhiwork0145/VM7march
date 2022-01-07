@@ -1,0 +1,144 @@
+.container_1 {
+    margin: 0;
+    padding: 0;
+    font-family: montsettat;
+    background: #FFF8DC;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_2 {
+    margin: 0;
+    padding: 0;
+    font-family: montsettat;
+    background: #6495ED;
+    height: 88vh;
+    width: 160vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    font-family: montsettat;
+    background: #f0409d;
+    height: 88vh;
+    width: 30vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 10px;
+}
+
+.second-div {
+    margin: 0;
+    padding: 0;
+    font-family: montsettat;
+    background: #4b75c5;
+    height: 88vh;
+    width: 130vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-top-right-radius: 10px;
+}
+
+.heding_1 {
+ 
+    align-items: center;
+    padding-left: 40px;
+    margin-top: 50px;
+    
+}
+
+.inventory {
+    margin-top: 30px;
+    background-color: white;
+    align-items: center;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 6px;
+    border-radius: 5px; 
+}
+
+.welcome {
+    padding-bottom: 15px;
+    padding-top: 6px;
+    margin-left: 17px;
+    font-family: montsettat;
+    background: #e0735f;
+    height: 10px;
+    width: 125vh;
+    border-radius: 10px;
+}
+
+.quats {
+    margin-left: 20px;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+
+
+
+.logout-button-container {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.product-list-container {
+    margin-left: 15px;
+    font-family: montsettat;
+    background: white;
+    height: 65vh;
+    width: 125vh;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    padding-top: 7px;
+    padding-bottom: 6px;
+    padding-left: 70px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-color: black;
+    margin-left: 315px;
+}
+
+.search-bottom {
+    padding: 6px;
+    padding-right: 13px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: #f0409d;
+    color: black;
+    font-weight: bold;
+    border-color: black;
+    font-size: 13px; 
+}
+
+.logout-button {
+    padding : 8px 25px;
+    border-radius: 10px;
+    background-color: rgb(83, 196, 83);
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    border-color: white;
+    margin-left: 820px;
+}

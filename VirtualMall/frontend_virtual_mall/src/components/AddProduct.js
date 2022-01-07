@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import './AddProduct.css';
-function Login() {
+function ProductList() {
     return (
         <>
           <div className="login-container">
@@ -140,4 +140,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default ProductList;
