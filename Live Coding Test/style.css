@@ -1,0 +1,52 @@
+#Heading{
+    font-size: 30PX;
+    font-weight: 800;
+}
+
+#button1{
+    width: 90px;
+    height: 30px;
+    color: white;
+    background:  green;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+#del_button{
+    width: 90px;
+    height: 30px;
+    color: white;
+    background:  #e92999;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+#update_button{
+    width: 90px;
+    height: 30px;
+    color: black;
+    background:  cyan;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#first{
+    padding-left: 0;
+    padding-right: 60px;
+}
+#last{
+    padding-left: 0;
+    padding-right: 60px;
+}
+#emailbox{
+    padding-left: 0px;
+    padding-right: 150px;
+}
+#action{
+    padding-left: 40px;
+    padding-right: 40px;
+}
